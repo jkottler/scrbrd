@@ -3,21 +3,21 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Welcome to Scrbrd!</h1>
 
   {{> games}}
 </body>
 
 <template name="games">
-  New game btn here
+  <span class="add_game">[New Game]</span> 
   {{#each games}}
     <div>{{title}}<div>{{> players}}</div></div>
   {{/each}}
 </template>
 
 <template name="players">
-  New player btn here
+  <span class="add_player">[New Player]</span>
   {{#each players}}
-  <span>{{name}} : {{wins}} <span class='add'>+</span> </span>
+  <span>{{name}} : {{wins}} <span class='inc_score'>+</span> </span>
   {{/each}}
 </template>

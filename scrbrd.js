@@ -1,8 +1,7 @@
 Games = new Mongo.Collection("games");
 
 Meteor.methods({
-  incScore: function(game_id, player_name) {
-    console.log("inc score for: "+game_id + " / " + player_name);
+  inc_score: function(game_id, player_name) {
     Games.update({_id: game_id, "players.name":player_name}, {$inc: {"players.$.wins": 1}});
   }
 });
@@ -15,11 +14,20 @@ if (Meteor.isClient) {
   });
 
   Template.players.events({
-    'click .add': function(event) {
+    'click .inc_score': function(event) {
       self = Template.currentData();
-      Meteor.call("incScore", self._id, this.name);
+      Meteor.call("inc_score", self._id, this.name);
+    },
+    'click .add_player': function(event) {
+      console.log("add player");
     }
-  })
+  });
+
+  Template.games.events({
+    'click .add_game': function(event) {
+      console.log("add game");
+    }
+  });
 }
 
 if (Meteor.isServer) {
