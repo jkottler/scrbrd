@@ -1,0 +1,23 @@
+<head>
+  <title>scrbrd</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> games}}
+</body>
+
+<template name="games">
+  New game btn here
+  {{#each games}}
+    <div>{{title}}<div>{{> players}}</div></div>
+  {{/each}}
+</template>
+
+<template name="players">
+  New player btn here
+  {{#each players}}
+  <span>{{name}} : {{wins}} <span class='add'>+</span> </span>
+  {{/each}}
+</template>
