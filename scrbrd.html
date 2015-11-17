@@ -9,15 +9,19 @@
 </body>
 
 <template name="games">
-  <span class="add_game">[New Game]</span> 
+  <form class="new-game" style="display:inline">
+    <input type="text" name="text" placeholder="New Game">
+  </form>
   {{#each games}}
     <div>{{title}}<div>{{> players}}</div></div>
   {{/each}}
 </template>
 
 <template name="players">
-  <span class="add_player">[New Player]</span>
+  <form class="new-player" style="display:inline">
+    <input type="text" name="text" placeholder="New Player Name" />
+  </form>
   {{#each players}}
-  <span>{{name}} : {{wins}} <span class='inc_score'>+</span> </span>
+  <span>{{name}} : {{wins}} <span class='inc-score'>+</span> </span>
   {{/each}}
 </template>

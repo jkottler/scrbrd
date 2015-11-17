@@ -14,18 +14,25 @@ if (Meteor.isClient) {
   });
 
   Template.players.events({
-    'click .inc_score': function(event) {
+    'click .inc-score': function(event) {
       self = Template.currentData();
       Meteor.call("inc_score", self._id, this.name);
     },
-    'click .add_player': function(event) {
-      console.log("add player");
+    'submit .new-player': function(event) {
+      event.preventDefault();
+      self = Template.currentData();
+      new_name = event.target.text.value;
+      Games.update(self._id, {$push:{players:{name:new_name, wins:0}}});
+      event.target.text.value = "";
     }
   });
 
   Template.games.events({
-    'click .add_game': function(event) {
-      console.log("add game");
+    'submit .new-game': function(event) {
+      event.preventDefault();
+      new_game = event.target.text.value;
+      Games.insert({title: new_game, players:[]});
+      event.target.text.value = "";
     }
   });
 }
