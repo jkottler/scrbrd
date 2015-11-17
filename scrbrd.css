@@ -1,1 +1,8 @@
 /* CSS declarations go here */
+.new-player {
+  display: inline;
+}
+
+.new-game {
+  display: inline;
+}

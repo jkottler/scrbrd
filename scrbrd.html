@@ -9,7 +9,7 @@
 </body>
 
 <template name="games">
-  <form class="new-game" style="display:inline">
+  <form class="new-game">
     <input type="text" name="text" placeholder="New Game">
   </form>
   {{#each games}}
@@ -18,10 +18,10 @@
 </template>
 
 <template name="players">
-  <form class="new-player" style="display:inline">
+  <form class="new-player">
     <input type="text" name="text" placeholder="New Player Name" />
   </form>
   {{#each players}}
-  <span>{{name}} : {{wins}} <span class='inc-score'>+</span> </span>
+  <span>{{name}} : {{wins}} <span class='inc-score'>[+]</span> </span>
   {{/each}}
 </template>

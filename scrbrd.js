@@ -39,17 +39,6 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-    if(Games.find({}).count() === 0) {
-      console.log("No games found\n");
-      init_games();
-    }
-  });
-}
 
-function init_games() {
-  console.log("should be creating new game instances");
-  Games.insert({title: "Puerto Rico", players: [
-    {name: "Jason", wins: 1},
-    {name: "Jona", wins: 1}
-    ]});
+  });
 }
