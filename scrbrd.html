@@ -15,7 +15,7 @@
     <input type="text" name="text" placeholder="New Game">
   </form>
   {{#each games}}
-    <div>{{title}} {{#if editMode}}<span class='remove-game'>[x]</span>{{/if}}<div>{{> players}}</div></div>
+    <div>{{#if editMode}}<span class='remove-game'>[x]</span>{{/if}} {{title}} <div>{{> players}}</div></div>
   {{/each}}
 </template>
 
@@ -24,6 +24,6 @@
     <input type="text" name="text" placeholder="New Player Name" />
   </form>
   {{#each players}}
-  <span>{{name}} {{#if editMode}}<span class='remove-player'>[x]</span>{{/if}}: {{wins}} <span class='inc-score'>[+]</span> {{#if editMode}}<span class='dec-score'>[-]</span>{{/if}}</span>
+  <span>{{#if editMode}}<span class='remove-player'>[x]</span>{{/if}} {{name}} : {{wins}} <span class='inc-score'>[+]</span> {{#if editMode}}<span class='dec-score'>[-]</span>{{/if}}</span>
   {{/each}}
 </template>

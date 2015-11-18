@@ -7,6 +7,10 @@
   display: inline;
 }
 
-.dec-score, .remove-player, .remove-game{
+.remove-player, .remove-game{
   background: rgb(255, 80, 80);
+}
+
+.dec-score {
+  background: rgb(255, 255, 80);
 }

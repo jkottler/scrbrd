@@ -42,6 +42,11 @@ if (Meteor.isClient) {
       new_game = event.target.text.value;
       Games.insert({title: new_game, players:[]});
       event.target.text.value = "";
+    },
+    'click .remove-game': function(event) {
+      event.preventDefault();
+      console.log("removing game");
+      Games.remove(this._id);
     }
   });
 
