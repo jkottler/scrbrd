@@ -6,3 +6,7 @@
 .new-game {
   display: inline;
 }
+
+.dec-score, .remove-player, .remove-game{
+  background: rgb(255, 80, 80);
+}

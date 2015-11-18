@@ -5,6 +5,8 @@
 <body>
   <h1>Welcome to Scrbrd!</h1>
 
+  <div><input type="checkbox" class="edit-mode" checked="{{editMode}}" /> Edit</div>
+
   {{> games}}
 </body>
 
@@ -13,7 +15,7 @@
     <input type="text" name="text" placeholder="New Game">
   </form>
   {{#each games}}
-    <div>{{title}}<div>{{> players}}</div></div>
+    <div>{{title}} {{#if editMode}}<span class='remove-game'>[x]</span>{{/if}}<div>{{> players}}</div></div>
   {{/each}}
 </template>
 
@@ -22,6 +24,6 @@
     <input type="text" name="text" placeholder="New Player Name" />
   </form>
   {{#each players}}
-  <span>{{name}} : {{wins}} <span class='inc-score'>[+]</span> </span>
+  <span>{{name}} {{#if editMode}}<span class='remove-player'>[x]</span>{{/if}}: {{wins}} <span class='inc-score'>[+]</span> {{#if editMode}}<span class='dec-score'>[-]</span>{{/if}}</span>
   {{/each}}
 </template>
