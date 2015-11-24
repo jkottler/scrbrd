@@ -11,3 +11,9 @@ I wanted one that I could back up.
 I wanted to teach myself [meteor](https://www.meteor.com/).
 
 This project (in the early stages yet, unsuitable for any but the simplest use case) is my answer to both issues.
+
+# Instructions
+clone this repo to a local folder on a machine with meteor installed
+
+    cd scrbrd
+    meteor
