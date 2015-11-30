@@ -19,6 +19,8 @@ Meteor.methods({
 });
 
 if (Meteor.isClient) {
+  Meteor.subscribe("games");
+
   Template.games.helpers({
     games: function() {
       return Games.find({});
@@ -63,12 +65,17 @@ if (Meteor.isClient) {
     }
   });
 
+  
   Template.registerHelper('editMode', function() {
     return Session.get('editMode');
   });
 }
 
 if (Meteor.isServer) {
+  Meteor.publish("games", function() {
+    return Games.find();
+  });
+
   Meteor.startup(function () {
 
   });
